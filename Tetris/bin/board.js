@@ -36,12 +36,6 @@ function Board()
         if (grid[i][j] != null)
         {
           grid[i][j].show();
-          if (grid[i][j + 1] == null && j < 23)
-          {
-            grid[i][j + 1] = grid[i][j];
-            grid[i][j] = null;
-            grid[i][j + 1].down();
-          }
         }
       }
     }
@@ -82,6 +76,25 @@ function Board()
       }
     }
     return false;
+  }
+
+  this.applyGravity = function()
+  {
+    // Moves bottom row first, ensures peices are only moved one space down
+    // at a time
+    for (var j = BoardRows; j >= 0; j--) {
+      for (var i = 0; i < BoardCols; i++) {
+        if (grid[i][j] != null)
+        {
+          if (!(grid[i][j].isfixed()) && grid[i][j + 1] == null && j < 23)
+          {
+            grid[i][j + 1] = grid[i][j];
+            grid[i][j] = null;
+            grid[i][j + 1].down();
+          }
+        }
+      }
+    }
   }
 
 }
