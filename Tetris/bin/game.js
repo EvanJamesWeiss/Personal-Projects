@@ -21,7 +21,6 @@ function draw()
   if (timeKeeper == TimeStep)
   {
     board.applyGravity();
-    console.log("applied");
     timeKeeper = 0;
   }
 
@@ -36,4 +35,16 @@ function draw()
     fill(0, 102, 153);
   }
 
+}
+
+function keyPressed()
+{
+  if (keyCode == LEFT_ARROW)
+  {
+    board.movePlayer(-1);
+  }
+  else if (keyCode == RIGHT_ARROW)
+  {
+    board.movePlayer(1);
+  }
 }
