@@ -21,6 +21,9 @@ function draw()
   if (timeKeeper == TimeStep)
   {
     board.applyGravity();
+    // Set fallen peices to fixed
+    //     This same function will add a new peice if the player is at the
+    //     bottom of the screen
     timeKeeper = 0;
   }
 
