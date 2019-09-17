@@ -32,6 +32,12 @@ function draw() {
 
 }
 
+function setBallSpeed(vel)
+{
+  velMod = vel;
+  console.log(velMod);
+}
+
 function keyPressed() {
   if (keyCode == UP_ARROW) {
     player2.setMotion(-1);
