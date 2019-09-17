@@ -1,9 +1,8 @@
-function Box(i, j, c = color(255, 255, 255), visible = true)
+function Box(i, j, c = color(255, 255, 255))
 {
   this.color = c;
   this.i = i;
   this.j = j;
-  this.visible = visible;
 
   // the key to the dynamic player.
   this.controlled = true;
@@ -11,16 +10,12 @@ function Box(i, j, c = color(255, 255, 255), visible = true)
   this.show = function()
   {
     fill(this.color);
-    if (!this.visible)
-    {
-      fill(color(55,55,55));
-    }
     rect(this.i * BoxSize, this.j * BoxSize, BoxSize, BoxSize);
   }
 
   this.down = function()
   {
-    if (this.j < 23)
+    if (this.j < 24)
     {
       this.j += 1;
     }

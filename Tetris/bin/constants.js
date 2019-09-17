@@ -6,4 +6,4 @@ const BoardRows = 24;
 const CanvasWidth = BoxSize * BoardCols;
 const CanvasHeight = BoxSize * BoardRows;
 
-const TimeStep = 100;
+const TimeStep = 50;

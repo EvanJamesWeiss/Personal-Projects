@@ -13,6 +13,8 @@ function Board()
 
   this.grid = org_grid;
   this.currentPeice = null;
+  this.cx = 0;
+  this.cy = 0;
 
   this.addPiece = function()
   {
@@ -28,6 +30,8 @@ function Board()
       {
         this.currentPeice = new Piece(i, j);
         this.grid[i][j] = this.currentPeice;
+        this.cx = i;
+        this.cy = j;
         return;
       }
     }
@@ -124,6 +128,10 @@ function Board()
             this.grid[i][j + 1] = this.grid[i][j];
             this.grid[i][j] = null;
             this.grid[i][j + 1].down();
+            if (this.grid[i][j + 1].player)
+            {
+              this.cy += 1;
+            }
           }
         }
       }
@@ -132,12 +140,30 @@ function Board()
 
   this._canMoveDown = function(i, j)
   {
-    return ((j < 23) && (!(this.grid[i][j].isfixed()) && this.grid[i][j + 1] == null));
+    return ((j < BoardRows - 1) && (!(this.grid[i][j].isfixed()) && this.grid[i][j + 1] == null));
   }
 
   this.movePlayer = function(dir)
   {
-    this.currentPeice.horizontal(dir)
+    canMove = false;
+    i = this.cx;
+    j = this.cy;
+    if (dir == -1 && i != 0)
+    {
+      canMove = (this.grid[i - 1][j] == null);
+    }
+    else if (dir == 1 && i != BoardCols - 1)
+    {
+      canMove = (this.grid[i + 1][j] == null);
+    }
+    
+    if (canMove)
+    {
+      this.grid[i + dir][j] = this.grid[i][j];
+      this.grid[i][j] = null;
+      this.cx += dir;
+      this.currentPeice.horizontal(dir);
+    }
   }
 
 }
