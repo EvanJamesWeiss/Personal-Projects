@@ -35,7 +35,7 @@ body {
   display: flex;
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  /* box-shadow: inset 0 0 1rem rgba(0, 0, 0, .5); */
 }
 
 .cover-container {
@@ -103,4 +103,31 @@ body {
  */
 .mastfoot {
   color: rgba(255, 255, 255, .5);
+}
+
+
+/*
+ * Main structure
+ */
+.thin-text {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.home-right-text {
+  font-size: 1.1rem;
+}
+
+.home-lower-text {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.text-highlight {
+  font-size: 15pt;
+  color: #BBF;
+}
+
+hr {
+  border: 4px solid #BBF;
 }
