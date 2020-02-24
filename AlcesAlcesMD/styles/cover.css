@@ -95,7 +95,7 @@ body {
  * Cover
  */
 .cover {
-  padding: 0 1.5rem;
+  padding: 1.25rem 1.5rem;
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
@@ -107,6 +107,7 @@ body {
  * Footer
  */
 .mastfoot {
+  margin-top: 100px;
   color: rgba(255, 255, 255, .5);
 }
 
