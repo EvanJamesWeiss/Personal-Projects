@@ -2,6 +2,11 @@
  * Globals
  */
 
+:root {
+  --site-accent-blue: #BBF;
+  --site-accent-orange: #FF6A00;
+}
+
 /* Links */
 a,
 a:focus,
@@ -125,9 +130,35 @@ body {
 
 .text-highlight {
   font-size: 15pt;
-  color: #BBF;
+  color: var(--site-accent-blue);
+}
+
+.site-blue {
+  color: var(--site-accent-blue);
+}
+
+.site-orange {
+  color: var(--site-accent-orange);
 }
 
 hr {
-  border: 4px solid #BBF;
+  border: 4px solid var(--site-accent-blue);
+}
+
+.proj-title {
+  padding-left: 1.5rem;
+}
+
+.proj-desc {
+  padding-right: 1.5rem;
+  text-align: right;
+}
+
+table .proj-container {
+  border-collapse: collapse;
+}
+
+table.proj-container th {
+  border-bottom: 1px solid var(--site-accent-blue);
+  padding: .75rem;
 }
