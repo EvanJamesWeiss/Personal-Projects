@@ -51,7 +51,7 @@
         <h3 class="cover-heading"><u class="site-blue">Back To Reality</u></h3>
         <p class="thin-text home-lower-text">
           All kidding aside, this is a personal website developed by Evan Weiss. It's intention is to serve as
-          a hub for personal projects, a digital resume, and testing my skills as a developer. After all, any
+          a hub for personal projects, testing my skills as a developer, and just a fun project in general. After all, any
           self-respecting coder has their own website (or so I'm told).
         </p>
         <p class="thin-text home-lower-text">
@@ -113,21 +113,55 @@
       </main>
 
       <!-- About page -->
-      <main id="main_aboutpage" role="main" class="inner cover" style="display: none;">
-        <table style="width: 100%;">
+      <main id="main_aboutpage" role="main" class="inner cover text-left" style="display: none;">
+        <h1 class="cover-heading"><u class="site-blue">About Page</u></h1>
+        <p>
+          The following is a summary of how this site was built and a list
+          of my personal accounts. Feel free to add me on any of the following
+          sites (even though I do not post anything). For a
+          true "about me" and resume, visit my professional website
+          <a class="site-orange" href="https://www.google.com/search?q=moose&sxsrf=ALeKk02o94PMyHShP8i8IvEYcX6YS-eXOw:1584552812818&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjvl6Scx6ToAhXFY98KHZiLDjgQ_AUoAXoECCEQAw&biw=1536&bih=731&dpr=2.5">here</a>.
+        </p>
+
+        <hr>
+
+        <table class="w-100 proj-container">
           <tr>
-            <th class="w-50"><img width="240px" height="360px" src="images/evan.jpg" alt=""></th>
-            <th>
-              <div>
-                <h1 class="cover-heading"><u class="site-blue">About The Author</u></h1>
-                <p class="thin-text home-right-text text-left">
-                  Hi there! I'm Evan Weiss (right), a 22-year-old with a little too much time on his hands.
-                  The guy on the left is my brother, Matt (he doesn't know I put this picture here *shhh...*).
-                </p>
-              </div>
-            </th>
+            <th class="proj-title">Personal Email</th>
+            <th class="proj-desc"><a class="site-orange" href="https://ejweiss12@gmail.com/">ejweiss12@gmail.com</a></th>
+          </tr>
+          <tr>
+            <th class="proj-title">GitHub Acct.</th>
+            <th class="proj-desc"><a class="site-orange" href="https://github.com/EvanJamesWeiss/games">EvanJamesWeiss</a></th>
+          </tr>
+          <tr>
+            <th class="proj-title">LinkedIn</th>
+            <th class="proj-desc"><a class="site-orange" href="http://linkedin.com/in/evan-weiss-01b25b15b">Link</a></th>
+          </tr>
+          <tr>
+            <th class="proj-title">Twitter</th>
+            <th class="proj-desc">@moosesurgeon</th>
+          </tr>
+          <tr>
+            <th class="proj-title">Discord</th>
+            <th class="proj-desc">moosesurgeon#3109</th>
+          </tr>
+          <tr>
+            <th class="proj-title">Spotify</th>
+            <th class="proj-desc"><a class="site-orange" href="https://open.spotify.com/user/moose_surgeon?si=sUPbsADsSaug6Fyf3DTZgA">moose_surgeon</a></th>
           </tr>
         </table>
+
+        <hr>
+
+        <h3 class="cover-heading"><u class="site-blue">Website info</u></h3>
+        <p>
+          This website is made serverless using AWS S3 buckets. Javascript with
+          the help of JQuery (overkill, I know, but just in case I expand this project)
+          runs the backend. Bootstrap was also invited to the party to make everything
+          look better.
+        </p>
+
       </main>
 
       <footer class="mastfoot mt-auto">
