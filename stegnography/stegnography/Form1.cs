@@ -32,10 +32,11 @@ namespace stegnography
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(txtNewFileName.Text, "^\\w+\\.[p][n][g]$"))
+            if (!Regex.IsMatch(txtNewFileName.Text, "^[\\w+,\' \']+$"))
             {
                 return;
             }
+            string NewFileName = GetNewFileName(txtNewFileName.Text);
             string fn = FileDialog("Select a file to encrypt");
             if (fn == "")
             {
@@ -93,7 +94,7 @@ namespace stegnography
 
             try
             {
-                img.Save(p + "\\" + txtNewFileName.Text, ImageFormat.Png);
+                img.Save(p + "\\" + NewFileName, ImageFormat.Png);
                 MessageBox.Show("Completed");
             }
             catch (Exception ex)
@@ -178,7 +179,9 @@ namespace stegnography
                 MessageBox.Show(ex.ToString());
                 throw;
             }
-            return new Bitmap(Image.FromStream(bmp));
+            Bitmap output = new Bitmap(Image.FromStream(bmp));
+            bmp.Close();
+            return output;
         }
 
         private static string StringToBinary(string data)
@@ -248,6 +251,12 @@ namespace stegnography
             {
                 return "";
             }
+        }
+
+        private string GetNewFileName(string fn)
+        {
+            fn = fn.Replace(" ", "_") + ".png";
+            return fn;
         }
 
         private void lblInfo_Click(object sender, EventArgs e)
