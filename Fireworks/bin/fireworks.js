@@ -1,16 +1,11 @@
 var fireworks = [];
 var grav;
 
-var slider;
-
 function setup() {
-  createCanvas(1000,600);
-
-  slider = createSlider(3000, 20000, 20000);
-  slider.position(width + 30, height / 2);
-
+  let canvas = createCanvas(window.innerWidth - 10, 800);
+  canvas.parent('canvas')
   colorMode(HSB);
-  grav = createVector(0, height / 1500);
+  grav = createVector(0, height / 2000);
   //fireworks.push(new Firework());
   stroke(255);
   strokeWeight(4);
@@ -20,7 +15,7 @@ function setup() {
 function draw() {
   colorMode(RGB);
   background(0, 0, 0, 25);
-  if (random(1) < width / slider.value()) {
+  if (random(1) < width / 15000) {
     fireworks.push(new Firework());
   }
   for (var i = fireworks.length - 1; i >= 0; i--) {
